@@ -44,8 +44,12 @@ disX = x0;
 while y0>-EPS || vy0>0
     x0 = vx0*tstep + x0;
     y0 = vy0*tstep + y0;
-    vy0 = vy0 - g*tstep - tstep*sign(vy0)*c*vy0^2;
-    % be careful about the force direction
+    vy0 = vy0 - g*tstep - tstep*sign(vy0)*c*vy0^2; 
+    % NOTE: not following the given formula
+    % (See also: relatedProblemMentioned.png)
+    % it was because a delay in material distribution occured when
+    % assigning homework. You need to correct it by yourself!
+    % Be careful about the force direction.
     vx0 = vx0 - tstep*sign(vx0)*c*vx0^2;
 end
 disX = x0 - disX;
